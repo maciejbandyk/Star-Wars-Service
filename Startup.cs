@@ -23,8 +23,9 @@ namespace StarWarsService
             //Don't show null values
             services.AddControllers().AddJsonOptions(options => { options.JsonSerializerOptions.IgnoreNullValues = true; });
 
-            services.AddDbContext<CharacterContext>(opt =>
-            opt.UseInMemoryDatabase("CharacterList"));
+            services.AddDbContextPool<StarwarsContext>(opt =>
+            opt.UseSqlServer(Configuration.GetConnectionString("StarwarsDBConnection")));
+
             services.AddControllers();
         }
 

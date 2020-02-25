@@ -46,7 +46,6 @@ C:\Users\maciek\Source\repos\StarWarsService\bin\Debug\netcoreapp3.1\runtimes\un
 C:\Users\maciek\Source\repos\StarWarsService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\maciek\Source\repos\StarWarsService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\maciek\Source\repos\StarWarsService\obj\Debug\netcoreapp3.1\StarWarsService.csproj.CopyComplete
-C:\Users\maciek\Source\repos\StarWarsService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\maciek\Source\repos\StarWarsService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\maciek\Source\repos\StarWarsService\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
 C:\Users\maciek\Source\repos\StarWarsService\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
