@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using StarWarsService.Models;
+using StarWarsService.Data.Core;
 
 namespace StarWarsService
 {
@@ -25,7 +26,8 @@ namespace StarWarsService
 
             services.AddDbContextPool<StarwarsContext>(opt =>
             opt.UseSqlServer(Configuration.GetConnectionString("StarwarsDBConnection")));
-
+            //Register repository
+            services.AddScoped<CoreCharacterRepository>();
             services.AddControllers();
         }
 

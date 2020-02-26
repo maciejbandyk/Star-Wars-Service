@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace StarWarsService.Models
 {
-    public class Character
+    public class Character : ICEntity
     {
         public int CharacterId { get; set; }
         public string Name { get; set; }
