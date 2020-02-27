@@ -23,9 +23,11 @@ namespace StarWarsService.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TEntity>>> Get()
+        public async Task<ActionResult<IEnumerable<CharacterDTO>>> Get()
         {
-            return await repository.GetAll();
+           
+            return await repository.GetAllCharacters();
+                
         }
 
         [HttpGet("{id}")]
@@ -67,6 +69,6 @@ namespace StarWarsService.Controllers
                 return NotFound();
             }
             return character;
-        }
+        }  
     }
 }
