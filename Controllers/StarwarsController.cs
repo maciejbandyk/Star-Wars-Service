@@ -23,11 +23,9 @@ namespace StarWarsService.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CharacterDTO>>> Get()
+        public async Task<ActionResult<IEnumerable<TEntity>>> Get()
         {
-           
-            return await repository.GetAllCharacters();
-                
+            return await repository.GetAll();
         }
 
         [HttpGet("{id}")]

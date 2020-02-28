@@ -12,7 +12,7 @@ namespace StarWarsService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CharactersController : StarwarsController<Character, CoreCharacterRepository>
+    public class CharactersController : StarwarsController<CharacterDTO, CoreCharacterRepository>
     {
         public CharactersController(CoreCharacterRepository repository) : base(repository)
         {

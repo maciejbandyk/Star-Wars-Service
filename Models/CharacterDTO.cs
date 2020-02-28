@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StarWarsService.Models
 {
-    public class CharacterDTO
+    public class CharacterDTO : ICEntity
     {
         [JsonIgnore]
         public int CharacterId { get; set; }
