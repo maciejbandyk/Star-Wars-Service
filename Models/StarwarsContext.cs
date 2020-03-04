@@ -18,6 +18,10 @@ namespace StarWarsService.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Character>()
+                .HasIndex(u => u.Name)
+                .IsUnique();
+
             modelBuilder.Entity<CharacterEpisode>()
                 .HasKey(t => new { t.CharacterId, t.EpisodeId });
 
