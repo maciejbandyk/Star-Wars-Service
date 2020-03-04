@@ -10,10 +10,13 @@ namespace StarWarsService.Data.Core
 {
     public class CoreCharacterRepository : CoreRepository<CharacterDTO, StarwarsContext>
     {
-        public readonly StarwarsContext context;
+        private readonly StarwarsContext context;
+        //Only for tests
+        public static StarwarsContext contextStatic;
         public CoreCharacterRepository(StarwarsContext context) : base(context)
         {
             this.context = GetContext();
+            contextStatic = GetContext();
         }
 
 
@@ -36,9 +39,9 @@ namespace StarWarsService.Data.Core
 
 
         [HttpPost]
-        public override async Task<CharacterDTO> Add(CharacterDTO entity)
+        public override async Task<CharacterDTO> Add([FromBody]CharacterDTO entity)
         {
-
+  
             var character = new Character
             {
                 CharacterId = entity.CharacterId,
@@ -97,7 +100,7 @@ namespace StarWarsService.Data.Core
             var entity = await context.Set<Character>().FindAsync(id);
             if (entity == null)
             {
-                return new CharacterDTO { CharacterId = entity.CharacterId, Name = entity.Name, Planet = entity.Planet };
+                return null;
             }
 
             context.Set<Character>().Remove(entity);
@@ -192,5 +195,8 @@ namespace StarWarsService.Data.Core
             Planet = itemDTO.Planet,
             Friends = GetFriends(itemDTO.Name, context)
         };
+
+        //Only for tests
+        public static StarwarsContext getContext() => contextStatic;
     }
 }

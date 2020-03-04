@@ -52,8 +52,13 @@ namespace StarWarsService.Controllers
         } 
 
         [HttpPost]
-        public async Task<ActionResult<TEntity>> Post(TEntity character)
+        public async Task<ActionResult<TEntity>> Post([FromBody]TEntity character)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
             await repository.Add(character);
             return CreatedAtAction("Get", new { CharacterId = character.CharacterId }, character);
         }
