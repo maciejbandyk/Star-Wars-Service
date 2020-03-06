@@ -1,6 +1,0 @@
-C:\Users\maciek\Source\repos\StarWarsService\obj\Release\netcoreapp3.1\StarWarsService.csprojAssemblyReference.cache
-C:\Users\maciek\Source\repos\StarWarsService\obj\Release\netcoreapp3.1\staticwebassets\StarWarsService.StaticWebAssets.Manifest.cache
-C:\Users\maciek\Source\repos\StarWarsService\obj\Release\netcoreapp3.1\staticwebassets\StarWarsService.StaticWebAssets.xml
-C:\Users\maciek\Source\repos\StarWarsService\obj\Release\netcoreapp3.1\StarWarsService.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\maciek\Source\repos\StarWarsService\obj\Release\netcoreapp3.1\StarWarsService.AssemblyInfoInputs.cache
-C:\Users\maciek\Source\repos\StarWarsService\obj\Release\netcoreapp3.1\StarWarsService.AssemblyInfo.cs
