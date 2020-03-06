@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StarWarsService.Data.Core
 {
-    public class CoreEpisodeRepository : CoreRepository<Episode, StarwarsContext>
+/*    public class CoreEpisodeRepository : CoreRepository<Episode, StarwarsContext>
     {
         private readonly StarwarsContext context;
 
@@ -14,5 +14,5 @@ namespace StarWarsService.Data.Core
         {
             this.context = context;
         }
-    }
+    }*/
 }
