@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace web_api_tests
 {
@@ -48,6 +49,7 @@ namespace web_api_tests
         {   
             //Act
             var found = await characterController.Get(1);
+
             //Assert
             Assert.NotNull(found.Value);
         }
@@ -71,7 +73,7 @@ namespace web_api_tests
             var result = characterController.Get().Result;
             //Assert
             var items = Assert.IsType<List<CharacterDTO>>(result.Value);
-            Assert.Equal(8, items.Count);
+            Assert.True(items.Count > 5);   
         }
 
         [Fact]
@@ -94,11 +96,12 @@ namespace web_api_tests
 
         [Fact]
         public void Add_ValidObject_ReturnsCreatedResponse()
-        {      
+        {
+            Random random = new Random();
             //Arrange
             var validCharacter = new CharacterDTO()
             {
-                Name = new Guid().ToString(),
+                Name = random.ToString(),
                 Planet = "Ziemia",
                 Friends = new string[] {"R2-D2"},
                 Episodes = new string[] {"EMPIRE"}
@@ -122,6 +125,18 @@ namespace web_api_tests
             //Assert
             Assert.IsType<NotFoundResult>(badResponse.Result);
         }      
+
+        [Fact]
+        public async void Delete_ExistingLastItemOfCharacters_ReturnsEntity()
+        {
+            //Arrange
+            var result = getContext().Characters.ToList().Last();
+            var id = result.CharacterId;
+            //Act
+            var okResult = await characterController.Delete(id);
+            //Assert
+            Assert.IsType<CharacterDTO>(okResult.Value);
+        }
 
     }
 }
