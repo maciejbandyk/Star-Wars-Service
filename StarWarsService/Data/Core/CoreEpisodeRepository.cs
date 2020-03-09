@@ -35,6 +35,11 @@ namespace StarWarsService.Data.Core
             return entity;
         }
 
+        public override async Task<Episode> Update(Episode entity)
+        {
+            return await base.Update(entity);
+        }
+
         public override async Task<Episode> Delete(int id)
         {
             return await base.Delete(id);

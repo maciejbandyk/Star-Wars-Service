@@ -51,7 +51,7 @@ namespace StarWarsService.Data.Core
             return await context.Set<TEntity>().ToListAsync();
         }
 
-        public async Task<TEntity> Update(TEntity entity)
+        public virtual async Task<TEntity> Update(TEntity entity)
         {
             context.Entry(entity).State = EntityState.Modified;     
             await context.SaveChangesAsync();
