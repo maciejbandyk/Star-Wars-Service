@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace StarWarsService.Models
 {
-    public class Character : ICEntity
+    public class Character : IEntity
     {
-        public int CharacterId { get; set; }
+        [Column("Id")]
+        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         public ICollection<CharacterEpisode> CharacterEpisodes { get; set; }

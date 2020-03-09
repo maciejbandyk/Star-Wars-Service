@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StarWarsService.Models;
 
 namespace StarWarsService.Migrations
 {
     [DbContext(typeof(StarwarsContext))]
-    partial class StarwarsContextModelSnapshot : ModelSnapshot
+    [Migration("20200309122635_ColumnsChanged")]
+    partial class ColumnsChanged
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,7 +22,7 @@ namespace StarWarsService.Migrations
 
             modelBuilder.Entity("StarWarsService.Models.Character", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CharacterId")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -33,7 +35,7 @@ namespace StarWarsService.Migrations
                     b.Property<string>("Planet")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("CharacterId");
 
                     b.HasIndex("Name")
                         .IsUnique();
@@ -43,38 +45,38 @@ namespace StarWarsService.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            CharacterId = 1,
                             Name = "Luke Skywalker"
                         },
                         new
                         {
-                            Id = 2,
+                            CharacterId = 2,
                             Name = "Darth Vader"
                         },
                         new
                         {
-                            Id = 3,
+                            CharacterId = 3,
                             Name = "Han Solo"
                         },
                         new
                         {
-                            Id = 4,
+                            CharacterId = 4,
                             Name = "Leia Organa",
                             Planet = "Alderaan"
                         },
                         new
                         {
-                            Id = 5,
+                            CharacterId = 5,
                             Name = "Willhuff Tarkin"
                         },
                         new
                         {
-                            Id = 6,
+                            CharacterId = 6,
                             Name = "C-3PO"
                         },
                         new
                         {
-                            Id = 7,
+                            CharacterId = 7,
                             Name = "R2-D2"
                         });
                 });
@@ -310,7 +312,7 @@ namespace StarWarsService.Migrations
 
             modelBuilder.Entity("StarWarsService.Models.Episode", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("EpisodeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -319,24 +321,24 @@ namespace StarWarsService.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("EpisodeId");
 
                     b.ToTable("Episode");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            EpisodeId = 1,
                             Name = "NEWHOPE"
                         },
                         new
                         {
-                            Id = 2,
+                            EpisodeId = 2,
                             Name = "EMPIRE"
                         },
                         new
                         {
-                            Id = 3,
+                            EpisodeId = 3,
                             Name = "JEDI"
                         });
                 });

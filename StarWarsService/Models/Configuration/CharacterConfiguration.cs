@@ -14,38 +14,38 @@ namespace StarWarsService.Models.Configuration
             (
                 new Character
                 {
-                    CharacterId = 1,
+                    Id = 1,
                     Name = "Luke Skywalker",              
                 },
                 new Character
                 {
-                    CharacterId = 2,
+                    Id = 2,
                     Name = "Darth Vader",
                 },
                 new Character
                 {
-                    CharacterId = 3,
+                    Id = 3,
                     Name = "Han Solo"
                 },
                 new Character
                 {
-                    CharacterId = 4,
+                    Id = 4,
                     Name = "Leia Organa",
                     Planet = "Alderaan"
                 },
                 new Character
                 {
-                    CharacterId = 5,
+                    Id = 5,
                     Name = "Willhuff Tarkin"
                 },
                 new Character
                 {
-                    CharacterId = 6,
+                    Id = 6,
                     Name = "C-3PO"
                 },
                 new Character
                 {
-                    CharacterId = 7,
+                    Id = 7,
                     Name = "R2-D2"
                 }
             );

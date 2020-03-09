@@ -63,7 +63,7 @@ namespace web_api_tests
             var result = characterController.Get(1).Result;
             //Assert
             Assert.IsType<CharacterDTO>(result.Value);
-            Assert.Equal(id, (result.Value as CharacterDTO).CharacterId);
+            Assert.Equal(id, (result.Value as CharacterDTO).Id);
         }
 
         [Fact]
@@ -82,7 +82,7 @@ namespace web_api_tests
             //Arrange
             var invalidCharacter = new CharacterDTO()
             {
-                CharacterId = 70,
+                Id = 70,
                 Episodes = new string[] { "NEW HOPE" },
                 Planet = "Trial"
             };
@@ -131,7 +131,7 @@ namespace web_api_tests
         {
             //Arrange
             var result = getContext().Characters.ToList().Last();
-            var id = result.CharacterId;
+            var id = result.Id;
             //Act
             var okResult = await characterController.Delete(id);
             //Assert

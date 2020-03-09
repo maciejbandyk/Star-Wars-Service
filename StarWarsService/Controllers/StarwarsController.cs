@@ -12,7 +12,7 @@ namespace StarWarsService.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public abstract class StarwarsController<TEntity, TRepository> : ControllerBase
-        where TEntity : class, ICEntity
+        where TEntity : class, IEntity
         where TRepository : IRepository<TEntity>
     {
         private readonly TRepository repository;
@@ -42,7 +42,7 @@ namespace StarWarsService.Controllers
         [HttpPut]
         public async Task<ActionResult<TEntity>> Put(int id, TEntity entity)
         {
-            if (id != entity.CharacterId)
+            if (id != entity.Id)
             {
                 return BadRequest();
             }
@@ -60,7 +60,7 @@ namespace StarWarsService.Controllers
             }
             
             await repository.Add(entity);
-            return CreatedAtAction("Get", new { entity.CharacterId, entity.Name }, entity);
+            return CreatedAtAction("Get", new { entity.Id, entity.Name }, entity);
         }
 
         [HttpDelete("{id}")]

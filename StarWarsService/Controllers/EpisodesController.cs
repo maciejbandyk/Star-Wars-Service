@@ -10,7 +10,7 @@ using StarWarsService.Models;
 
 namespace StarWarsService.Controllers
 {
-/*    [Route("api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class EpisodesController : StarwarsController<Episode, CoreEpisodeRepository>
     {
@@ -20,5 +20,5 @@ namespace StarWarsService.Controllers
         {
            
         }
-    }*/
+    }
 }

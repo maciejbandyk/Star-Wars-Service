@@ -28,6 +28,7 @@ namespace StarWarsService
             opt.UseSqlServer(Configuration.GetConnectionString("StarwarsDBConnection")));
             //Register repository
             services.AddScoped<CoreCharacterRepository>();
+            services.AddScoped<CoreEpisodeRepository>();
             services.AddControllers();
         }
 

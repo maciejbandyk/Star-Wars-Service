@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace StarWarsService.Data.Core
 {
     public abstract class CoreRepository<TEntity, TContext> : IRepository<TEntity>
-        where TEntity : class, ICEntity
+        where TEntity : class, IEntity
         where TContext : DbContext
     {
         private readonly TContext context;

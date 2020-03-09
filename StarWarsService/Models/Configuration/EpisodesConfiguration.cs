@@ -13,17 +13,17 @@ namespace StarWarsService.Models.Configuration
             (
                 new Episode
                 {
-                    EpisodeId = 1,
+                    Id = 1,
                     Name = "NEWHOPE"
                 },
                 new Episode
                 {
-                    EpisodeId = 2,
+                    Id = 2,
                     Name = "EMPIRE"
                 },
                 new Episode
                 {
-                    EpisodeId = 3,
+                    Id = 3,
                     Name = "JEDI"
                 }
             );
