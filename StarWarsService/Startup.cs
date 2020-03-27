@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using StarWarsService.Models;
 using StarWarsService.Data.Core;
+using Microsoft.OpenApi.Models;
 
 namespace StarWarsService
 {
@@ -30,6 +31,12 @@ namespace StarWarsService
             services.AddScoped<CoreCharacterRepository>();
             services.AddScoped<CoreEpisodeRepository>();
             services.AddControllers();
+            //Register swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Star Wars Api", Version = "v1" });
+            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +46,13 @@ namespace StarWarsService
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Star Wars Api V1");
+            });
 
             app.UseHttpsRedirection();
 
